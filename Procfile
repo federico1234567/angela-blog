@@ -1,1 +1,1 @@
-web: gunicor main:app
+web: gunicor my_folder main:app
