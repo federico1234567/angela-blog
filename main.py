@@ -64,7 +64,7 @@ class User(db.Model,UserMixin):
     name = db.Column(db.String(250), nullable=False)
     posts=relationship('BlogPost',back_populates='author')
     comments= relationship('Comment',back_populates='comment_author')
-    beta=relationship('Comment',back_populates="alpha")
+
 
 
 
@@ -89,8 +89,7 @@ class Comment(db.Model,UserMixin):
     author_name = db.Column(db.Integer, db.ForeignKey("user.name"))
     comment_author = relationship("User", back_populates="comments")
     text = db.Column(db.Text, nullable=False)
-    email_comment=db.Column(db.Integer,db.ForeignKey("user.email"))
-    alpha=relationship("User",back_populates="beta")
+
 
 
 
@@ -294,4 +293,5 @@ def delete_post(post_id):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',port=5000)
+
