@@ -36,7 +36,7 @@ login_manager.init_app(app)
 
 ##CONNECT TO DB
 try:
- app.config['SQLALCHEMY_DATABASE_URI'] =("DATABASE_URL")
+ app.config['SQLALCHEMY_DATABASE_URI'] =("postgres://fpxgmzgimktjok:aec47624c2099cac71f2bdf123df9ed54e4a483803564dc8a9161c0a08cc4dc0@ec2-52-21-136-176.compute-1.amazonaws.com:5432/ddad1cv1n61lqg")
 except:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
